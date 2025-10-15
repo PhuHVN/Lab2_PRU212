@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - GroundSegment
+  - Item
+  - Monster
+  - Rock
+  - Rock-2
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - Player
   - GroundSegment
   - Ground
-  - 
+  - Monster
   - 
   - 
   - 

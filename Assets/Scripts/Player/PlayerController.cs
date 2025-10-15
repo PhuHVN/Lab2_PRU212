@@ -3,8 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 14f;
+    public float moveSpeed = 7f;
+    public float jumpForce = 10f;
     public float jumpCooldown = 0.5f;
     public LayerMask groundLayer;
     public Transform groundCheck;

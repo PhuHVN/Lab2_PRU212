@@ -48,7 +48,7 @@ public class SpriteShapeGenerator : MonoBehaviour
             initialized = true;
         }
 
-        if (player.position.x > nextGenerateX)
+        if (player.position.x > nextGenerateX - segmentWidth * 2f)
         {
             GenerateNextSegment();
         }
@@ -170,7 +170,7 @@ public class SpriteShapeGenerator : MonoBehaviour
         shape.BakeCollider();
     }
 
-    float GetGroundYAtX(float x)
+    public float GetGroundYAtX(float x)
     {
    
         float localX = x - transform.position.x;
