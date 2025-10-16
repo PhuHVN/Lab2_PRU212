@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 80d1ba9a8bc6d114da6b5e6dddc21b95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6489556784670388057
+    second: Noel_Player_0
+  - first:
+      213: 1232968026242840786
+    second: Noel_Player_1
+  - first:
+      213: -8081341070973082188
+    second: Noel_Player_2
+  - first:
+      213: -1852865578797953582
+    second: Noel_Player_3
+  - first:
+      213: -8043718282539077150
+    second: Noel_Player_4
+  - first:
+      213: 2974442355865213064
+    second: Noel_Player_5
+  - first:
+      213: 6353021873565983761
+    second: Noel_Player_6
+  - first:
+      213: -4401764023288317643
+    second: Noel_Player_7
+  - first:
+      213: -8987629696562538627
+    second: Noel_Player_8
+  - first:
+      213: -2879047243792666816
+    second: Noel_Player_9
+  - first:
+      213: 8726576289758851307
+    second: Noel_Player_10
+  - first:
+      213: 1812838160631719363
+    second: Noel_Player_11
+  - first:
+      213: 4268699094327966760
+    second: Noel_Player_12
+  - first:
+      213: 4886673229681058874
+    second: Noel_Player_13
+  - first:
+      213: -2914710504542055037
+    second: Noel_Player_14
+  - first:
+      213: -490529678859416647
+    second: Noel_Player_15
+  - first:
+      213: -2380968726534359596
+    second: Noel_Player_16
+  - first:
+      213: -7487952159911016368
+    second: Noel_Player_17
+  - first:
+      213: -3660233857713152808
+    second: Noel_Player_18
+  - first:
+      213: 4633956099476906224
+    second: Noel_Player_19
+  - first:
+      213: 6289528584061014056
+    second: Noel_Player_20
+  - first:
+      213: 4056215057307875531
+    second: Noel_Player_21
+  - first:
+      213: -6545587615891719053
+    second: Noel_Player_22
+  - first:
+      213: -7228091899831995622
+    second: Noel_Player_23
+  - first:
+      213: 3526276355265098413
+    second: Noel_Player_24
+  - first:
+      213: -754120405756786559
+    second: Noel_Player_25
+  - first:
+      213: 3003968920679865700
+    second: Noel_Player_26
+  - first:
+      213: -4427366669409835847
+    second: Noel_Player_27
+  - first:
+      213: 5565288703305495255
+    second: Noel_Player_28
+  - first:
+      213: -666552490295395308
+    second: Noel_Player_29
+  - first:
+      213: 8844728133520468365
+    second: Noel_Player_30
+  - first:
+      213: -8135697429893287645
+    second: Noel_Player_31
+  - first:
+      213: -6486941445153518010
+    second: Noel_Player_32
+  - first:
+      213: 910749317403405134
+    second: Noel_Player_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Noel_Player_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 276
+        width: 471
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f210433898f0a50800000000000000
+      internalID: 6489556784670388057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Noel_Player_2
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 275
+        width: 406
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5efdbdc1f49df80800000000000000
+      internalID: -8081341070973082188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Noel_Player_19
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 271
+        width: 406
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0631e458e1f4040800000000000000
+      internalID: 4633956099476906224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f47ebc13ec4d39346b0552154551c736
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Noel_Player_0: 6489556784670388057
+      Noel_Player_1: 1232968026242840786
+      Noel_Player_10: 8726576289758851307
+      Noel_Player_11: 1812838160631719363
+      Noel_Player_12: 4268699094327966760
+      Noel_Player_13: 4886673229681058874
+      Noel_Player_14: -2914710504542055037
+      Noel_Player_15: -490529678859416647
+      Noel_Player_16: -2380968726534359596
+      Noel_Player_17: -7487952159911016368
+      Noel_Player_18: -3660233857713152808
+      Noel_Player_19: 4633956099476906224
+      Noel_Player_2: -8081341070973082188
+      Noel_Player_20: 6289528584061014056
+      Noel_Player_21: 4056215057307875531
+      Noel_Player_22: -6545587615891719053
+      Noel_Player_23: -7228091899831995622
+      Noel_Player_24: 3526276355265098413
+      Noel_Player_25: -754120405756786559
+      Noel_Player_26: 3003968920679865700
+      Noel_Player_27: -4427366669409835847
+      Noel_Player_28: 5565288703305495255
+      Noel_Player_29: -666552490295395308
+      Noel_Player_3: -1852865578797953582
+      Noel_Player_30: 8844728133520468365
+      Noel_Player_31: -8135697429893287645
+      Noel_Player_32: -6486941445153518010
+      Noel_Player_33: 910749317403405134
+      Noel_Player_4: -8043718282539077150
+      Noel_Player_5: 2974442355865213064
+      Noel_Player_6: 6353021873565983761
+      Noel_Player_7: -4401764023288317643
+      Noel_Player_8: -8987629696562538627
+      Noel_Player_9: -2879047243792666816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

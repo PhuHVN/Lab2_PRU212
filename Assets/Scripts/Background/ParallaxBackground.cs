@@ -2,22 +2,55 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    float backgroundWidth;
+    [SerializeField] private Transform player; 
+    [SerializeField] private float parallaxFactor; 
+
+    private float backgroundWidth;
+    private float startPosX;
+    private float lastPlayerX;
+
     void Start()
     {
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         backgroundWidth = sprite.texture.width / sprite.pixelsPerUnit;
+
+        startPosX = transform.position.x;
+
+    
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+
+        if (player != null)
+        {
+            lastPlayerX = player.position.x;
+        }
     }
 
-
-    void Update()
+    void LateUpdate()
     {
-        float movementX = moveSpeed * Time.deltaTime;
-        transform.position += new Vector3(movementX, 0f, 0f);
-        if (transform.position.x <= -backgroundWidth)
+        if (player == null) return;
+
+     
+        float playerDeltaX = player.position.x - lastPlayerX;
+
+        transform.position += new Vector3(playerDeltaX * parallaxFactor, 0f, 0f);
+
+        
+        lastPlayerX = player.position.x;
+
+
+        float distanceFromPlayer = transform.position.x - player.position.x;
+
+      
+        if (distanceFromPlayer < -backgroundWidth)
         {
-            transform.position = new Vector3(transform.position.x + backgroundWidth, transform.position.y, transform.position.z);
+            transform.position += new Vector3(backgroundWidth * 2, 0f, 0f);
+        }
+        else if (distanceFromPlayer > backgroundWidth)
+        {
+            transform.position -= new Vector3(backgroundWidth * 2, 0f, 0f);
         }
     }
 }
