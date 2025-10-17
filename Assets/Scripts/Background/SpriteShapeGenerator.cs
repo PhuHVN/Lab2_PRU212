@@ -14,8 +14,8 @@ public class SpriteShapeGenerator : MonoBehaviour
     public float playerSpawnHeight = 2f;
 
     [Header("Height Limits")]
-    public float minTerrainHeight = -1f; 
-    public float maxTerrainHeight = 3f; 
+    public float minTerrainHeight = -1f;
+    public float maxTerrainHeight = 3f;
 
     private SpriteShapeController shape;
     private Spline spline;
@@ -59,7 +59,7 @@ public class SpriteShapeGenerator : MonoBehaviour
         spline.Clear();
         float x = -2f;
 
-     
+
         lastY = (minTerrainHeight + maxTerrainHeight) / 2f;
 
         for (int i = 0; i < visibleSegments; i++)
@@ -68,7 +68,7 @@ public class SpriteShapeGenerator : MonoBehaviour
             spline.InsertPointAt(i, new Vector3(x, y, 0));
 
             spline.SetTangentMode(i, ShapeTangentMode.Continuous);
-   
+
             spline.SetLeftTangent(i, new Vector3(-0.5f, 0, 0));
             spline.SetRightTangent(i, new Vector3(0.5f, 0, 0));
 
@@ -84,18 +84,18 @@ public class SpriteShapeGenerator : MonoBehaviour
 
     IEnumerator SmoothSpawnPlayer()
     {
-      
+
         yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
 
-        
-        float spawnX = segmentWidth * 3; 
+
+        float spawnX = segmentWidth * 3;
         float groundY = GetGroundYAtX(spawnX);
 
 
         player.position = new Vector3(spawnX, groundY + playerSpawnHeight, player.position.z);
 
-       
+
         yield return null;
 
 
@@ -172,7 +172,7 @@ public class SpriteShapeGenerator : MonoBehaviour
 
     public float GetGroundYAtX(float x)
     {
-   
+
         float localX = x - transform.position.x;
 
         for (int i = 0; i < spline.GetPointCount() - 1; i++)
