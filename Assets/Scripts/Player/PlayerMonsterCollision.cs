@@ -14,6 +14,8 @@ public class PlayerMonsterCollision : MonoBehaviour
         {
             Debug.Log("Game Over");
             //ScoreManager.Instance.AddScore(1);
+            AudioMangement.instance.StopMusic();
+            AudioMangement.instance.PlayGameOver();
             GameOver();
         }
     }
@@ -39,6 +41,7 @@ public class PlayerMonsterCollision : MonoBehaviour
         // Khi b?m nút Play Again, game s? ch?y l?i bình th??ng
         Time.timeScale = 1f;
         // T?i l?i Scene hi?n t?i
+        AudioMangement.instance.PlayGameMusicBackground();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
