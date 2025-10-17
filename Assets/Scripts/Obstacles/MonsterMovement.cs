@@ -3,7 +3,7 @@ using UnityEngine;
 public class MonsterMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 4f; // Player = 7f, nên monster ch?m h?n
+    public float moveSpeed = 4f; // Player = 7f, nï¿½n monster ch?m h?n
     public float destroyOffset = -30f;
     [Header("Terrain Alignment")]
     public float heightOffset = 0.5f;
@@ -23,10 +23,10 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        // Di chuy?n sang trái theo th?i gian
+        // Di chuy?n sang trï¿½i theo th?i gian
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime, Space.World);
 
-        // N?u có terrain ? bám theo m?t ??t
+        // N?u cï¿½ terrain ? bï¿½m theo m?t ??t
         if (terrain != null)
         {
             //float groundY = terrain.GetGroundYAtX(transform.position.x);
