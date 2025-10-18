@@ -9,6 +9,8 @@ TagManager:
   - Monster
   - Rock
   - Rock-2
+  - Thunder
+  - Heart
   layers:
   - Default
   - TransparentFX
