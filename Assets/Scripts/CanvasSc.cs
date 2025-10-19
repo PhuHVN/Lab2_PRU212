@@ -1,12 +1,17 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CanvasSc : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public TMP_Text highScoreText;
+    private int highScore;
     void Start()
     {
         AudioMangement.instance.PlayStartMusicBackground();
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = "High Score: " + highScore;
     }
 
     // Update is called once per frame

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class PlayerMonsterCollision : MonoBehaviour
@@ -22,6 +23,9 @@ public class PlayerMonsterCollision : MonoBehaviour
 
     public bool isCheatActive = false;
 
+    public TMP_Text highScoreText;
+    private int highScore;
+
     void Start()
     {
         // Kh?i t?o máu ban ??u
@@ -30,6 +34,7 @@ public class PlayerMonsterCollision : MonoBehaviour
         {
             heartUI.UpdateHearts(currentHealth);
         }
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -121,6 +126,18 @@ public class PlayerMonsterCollision : MonoBehaviour
         {
             currentScore = ScoreManager.Instance.GetScore();
             scoreTextOnGameOver.text += currentScore.ToString();
+        }
+        float score = ScoreManager.Instance.GetScore();
+        if (score > highScore)
+        {
+            highScore = Mathf.RoundToInt(score);
+            PlayerPrefs.SetInt("HighScore", highScore); // save high score
+            PlayerPrefs.Save();
+            highScoreText.text = "New High Score: " + highScore;
+        }
+        else
+        {
+            highScoreText.text = "High Score: " + highScore;
         }
 
         if (gameOverCanvas != null)
