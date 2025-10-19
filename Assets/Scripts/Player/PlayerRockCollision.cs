@@ -25,6 +25,8 @@ public class PlayerRockCollision : MonoBehaviour
     // Bi?n ?? qu?n lý coroutine
     private Coroutine currentDebuffCoroutine;
 
+    public bool isCheatActive = false;
+
     void Awake()
     {
         playerController = GetComponent<PlayerController>();
@@ -78,6 +80,10 @@ public class PlayerRockCollision : MonoBehaviour
     // THAY ??I: Coroutine gi? nh?n m?t tham s? 'duration'
     private IEnumerator ApplyDebuff(float duration)
     {
+        if(isCheatActive)
+        {
+            yield break; 
+        }
         // 1. Áp d?ng hi?u ?ng
         playerController.moveSpeed = originalMoveSpeed * speedDebuffMultiplier;
         playerController.jumpForce = originalJumpForce * jumpDebuffMultiplier;

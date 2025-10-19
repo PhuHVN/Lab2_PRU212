@@ -20,6 +20,8 @@ public class PlayerMonsterCollision : MonoBehaviour
     private bool isInvincible = false;
     public float invincibilityDuration = 1f;
 
+    public bool isCheatActive = false;
+
     void Start()
     {
         // Kh?i t?o máu ban ??u
@@ -34,7 +36,7 @@ public class PlayerMonsterCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            Debug.Log("Game Over");
+            //Debug.Log("Game Over");
             //ScoreManager.Instance.AddScore(1);
             //AudioMangement.instance.StopMusic();
             //AudioMangement.instance.PlayGameOver();
@@ -48,7 +50,11 @@ public class PlayerMonsterCollision : MonoBehaviour
 
     void TakeDamage(GameObject monster)
     {
-        currentHealth--; // Gi?m 1 máu
+        if (!isCheatActive)
+        {
+            currentHealth--; // Gi?m 1 máu
+        }
+
 
         // C?p nh?t l?i UI trái tim
         if (heartUI != null)
@@ -70,7 +76,7 @@ public class PlayerMonsterCollision : MonoBehaviour
         //    StartCoroutine(InvincibilityCoroutine());
         //}
 
-        if(currentHealth > 0)
+        if (currentHealth > 0)
         {
             StartCoroutine(InvincibilityCoroutine());
             Destroy(monster);
@@ -113,11 +119,11 @@ public class PlayerMonsterCollision : MonoBehaviour
         }
         if (scoreTextOnGameOver != null)
         {
-            currentScore =  ScoreManager.Instance.GetScore();
+            currentScore = ScoreManager.Instance.GetScore();
             scoreTextOnGameOver.text += currentScore.ToString();
         }
 
-        if(gameOverCanvas != null)
+        if (gameOverCanvas != null)
         {
             gameOverCanvas.SetActive(true);
         }
