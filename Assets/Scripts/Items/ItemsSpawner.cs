@@ -15,8 +15,12 @@ public class ItemsSpawner : MonoBehaviour
     public float maxSpawnInterval = 14f;
     public float yOffsetMin = 1.0f;
     public float yOffsetMax = 2.0f;
-    public float avoidObstacleRange = 4f; 
+    public float avoidObstacleRange = 4f;
 
+    [Header("Delay Settings")]
+    public float spawnDelayAfterStart = 2f;
+
+    private float gameStartTime;
     private float nextSpawnX;
     private readonly List<GameObject> spawnedItems = new();
 
@@ -29,12 +33,23 @@ public class ItemsSpawner : MonoBehaviour
             return;
         }
 
-        nextSpawnX = player.position.x + Random.Range(minSpawnInterval, maxSpawnInterval);
+        gameStartTime = Time.time;
+        //nextSpawnX = player.position.x + Random.Range(minSpawnInterval, maxSpawnInterval);
+        nextSpawnX = float.MaxValue;
     }
 
     void Update()
     {
+        if (Time.time - gameStartTime < spawnDelayAfterStart)
+            return;
+
         if (player == null || terrain == null) return;
+
+        if (nextSpawnX == float.MaxValue)
+        {
+            // spawn ??u tiên cách player m?t kho?ng xa h?n bình th??ng
+            nextSpawnX = player.position.x + Random.Range(minSpawnInterval + 8f, maxSpawnInterval + 12f);
+        }
 
         if (player.position.x >= nextSpawnX - 10f)
         {

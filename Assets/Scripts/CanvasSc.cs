@@ -12,7 +12,7 @@ public class CanvasSc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void onClickPlayEvent()
@@ -26,5 +26,13 @@ public class CanvasSc : MonoBehaviour
     {
         AudioMangement.instance.PlayButtonClick();
         Application.Quit();
+    }
+
+    public void onClickTutorialEvent()
+    {
+        AudioMangement.instance.PlayButtonClick();
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 2);
+        AudioMangement.instance.StopMusic();
+        AudioMangement.instance.PlayGameMusicBackground();
     }
 }

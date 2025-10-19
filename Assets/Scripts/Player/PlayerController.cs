@@ -15,27 +15,34 @@ public class PlayerController : MonoBehaviour
     private float lastJumpTime;
     private bool isGrounded;
 
+    //cheat code
+    public GameObject isCheat; 
+    private string cheatInput = "";
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.interpolation = RigidbodyInterpolation2D.Interpolate; 
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
     }
 
     private void FixedUpdate()
     {
-   
+
         rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
 
-   
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     private void Update()
     {
+        HandleCheatInput();
+
         if (Input.GetButtonDown("Jump") && canJump && isGrounded)
         {
             AudioMangement.instance.PlayJump();
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); 
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             canJump = false;
             lastJumpTime = Time.time;
@@ -45,6 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             canJump = true;
         }
+
     }
 
     private void OnDrawGizmosSelected()
@@ -53,6 +61,37 @@ public class PlayerController : MonoBehaviour
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
+    }
+
+    private void HandleCheatInput()
+    {
+        foreach (char c in Input.inputString)
+        {
+            if (c == '\n' || c == '\r')
+            {
+                CheckCheatCode();
+                cheatInput = "";
+            }
+            else
+            {
+                cheatInput += char.ToLower(c);
+                if (cheatInput.Length > 20)
+                    cheatInput = cheatInput.Substring(cheatInput.Length - 20);
+            }
+        }
+    }
+
+    private void CheckCheatCode()
+    {
+        PlayerMonsterCollision playerMonsterCollision = GetComponent<PlayerMonsterCollision>();
+        PlayerRockCollision playerRockCollision = GetComponent<PlayerRockCollision>();
+        if (cheatInput.Contains("cheat"))
+        {
+            Debug.Log("Cheat code activated!");
+            playerRockCollision.isCheatActive = !playerRockCollision.isCheatActive;
+            playerMonsterCollision.isCheatActive = !playerMonsterCollision.isCheatActive;
+            isCheat.SetActive(playerMonsterCollision.isCheatActive);
         }
     }
 }

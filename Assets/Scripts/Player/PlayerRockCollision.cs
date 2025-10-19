@@ -15,6 +15,8 @@ public class PlayerRockCollision : MonoBehaviour
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
 
+    private PlayerThunderCollision playerThunderCollision;
+
     // Bi?n ?? l?u tr? các giá tr? g?c
     private float originalMoveSpeed;
     private float originalJumpForce;
@@ -23,10 +25,13 @@ public class PlayerRockCollision : MonoBehaviour
     // Bi?n ?? qu?n lý coroutine
     private Coroutine currentDebuffCoroutine;
 
+    public bool isCheatActive = false;
+
     void Awake()
     {
         playerController = GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerThunderCollision = GetComponent<PlayerThunderCollision>();
     }
 
     void Start()
@@ -61,6 +66,7 @@ public class PlayerRockCollision : MonoBehaviour
         // N?u có va ch?m v?i m?t trong các lo?i ?á
         if (durationToApply > 0f)
         {
+            playerThunderCollision?.CancelThunderBuff();
             // D?ng coroutine c? n?u ?ang ch?y
             if (currentDebuffCoroutine != null)
             {
@@ -74,6 +80,10 @@ public class PlayerRockCollision : MonoBehaviour
     // THAY ??I: Coroutine gi? nh?n m?t tham s? 'duration'
     private IEnumerator ApplyDebuff(float duration)
     {
+        if(isCheatActive)
+        {
+            yield break; 
+        }
         // 1. Áp d?ng hi?u ?ng
         playerController.moveSpeed = originalMoveSpeed * speedDebuffMultiplier;
         playerController.jumpForce = originalJumpForce * jumpDebuffMultiplier;

@@ -91,7 +91,14 @@ public class ObstacleSpawner : MonoBehaviour
     public float yOffsetMin = 0f;
     public float yOffsetMax = 0.5f;
 
+    //[Header("Spawn Delay")]
+    //public float initialSpawnDelay = 2f;
+    [Header("Delay Settings")]
+    public float spawnDelayAfterStart = 2f;
+
+    private float gameStartTime;
     private float nextSpawnX;
+    //private bool canSpawn = false;
     private readonly List<GameObject> spawnedObstacles = new();
 
     void Start()
@@ -103,12 +110,24 @@ public class ObstacleSpawner : MonoBehaviour
             return;
         }
 
-        nextSpawnX = player.position.x + Random.Range(minSpawnInterval, maxSpawnInterval);
+        gameStartTime = Time.time;
+        //nextSpawnX = player.position.x + Random.Range(minSpawnInterval, maxSpawnInterval);
+        nextSpawnX = float.MaxValue;
     }
 
     void Update()
     {
+        if (Time.time - gameStartTime < spawnDelayAfterStart)
+            return;
+
         if (player == null || terrain == null) return;
+
+        // Sau delay -> kh?i t?o nextSpawnX 1 l?n
+        if (nextSpawnX == float.MaxValue)
+        {
+            // spawn ??u tiên cách player m?t kho?ng xa h?n bình th??ng
+            nextSpawnX = player.position.x + Random.Range(minSpawnInterval + 8f, maxSpawnInterval + 12f);
+        }
 
         // Spawn khi player t?i g?n
         if (player.position.x >= nextSpawnX - 15f)
@@ -119,6 +138,20 @@ public class ObstacleSpawner : MonoBehaviour
 
         CleanupOldObstacles();
     }
+
+    //public void StartSpawning()
+    //{
+    //    // G?i hàm này t? StartButton trong UI
+    //    StartCoroutine(StartSpawningAfterDelay());
+    //}
+
+    //private System.Collections.IEnumerator StartSpawningAfterDelay()
+    //{
+    //    canSpawn = false;
+    //    yield return new WaitForSeconds(initialSpawnDelay);
+    //    canSpawn = true;
+    //    Debug.Log("?? Obstacle spawning started!");
+    //}
 
     void SpawnObstacle(float x)
     {
