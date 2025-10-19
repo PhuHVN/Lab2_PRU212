@@ -12,6 +12,8 @@ public class AudioMangement : MonoBehaviour
     public AudioClip hit;
     public AudioClip StartMusicBackground;
     public AudioClip GameMusicBackground;
+    public AudioClip monsterCollision;
+    public AudioClip itemCollection;
     private void Awake()
     {
         if (instance == null)
@@ -56,6 +58,15 @@ public class AudioMangement : MonoBehaviour
         audioM.clip = GameMusicBackground;
         audioM.loop = true;
         audioM.Play();
+    }
+    public void PlayMonsterCollision()
+    {
+        audioM.PlayOneShot(monsterCollision);
+    }
+
+    public void PlayItemCollection()
+    {
+        audioM.PlayOneShot(itemCollection);
     }
     public void StopMusic()
     {

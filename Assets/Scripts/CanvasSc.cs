@@ -9,7 +9,11 @@ public class CanvasSc : MonoBehaviour
     private int highScore;
     void Start()
     {
-        AudioMangement.instance.PlayStartMusicBackground();
+        Time.timeScale = 1f;
+        if (AudioMangement.instance != null)
+        {
+            AudioMangement.instance.PlayStartMusicBackground();
+        }
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = "High Score: " + highScore;
     }

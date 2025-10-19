@@ -2353,6 +2353,8 @@ MonoBehaviour:
   hit: {fileID: 8300000, guid: 13491200c297e6f45a0d99741bb89f32, type: 3}
   StartMusicBackground: {fileID: 8300000, guid: f8c460cbbd06f4846973b47ea9fc3358, type: 3}
   GameMusicBackground: {fileID: 8300000, guid: 28b30851c72b92344a45278c7254c8a4, type: 3}
+  monsterCollision: {fileID: 8300000, guid: 723d09912c1ae734fab2f841a6db9d8a, type: 3}
+  itemCollection: {fileID: 8300000, guid: f379dbef38131d84f8643deb5fb3d4aa, type: 3}
 --- !u!1 &1837874589
 GameObject:
   m_ObjectHideFlags: 0

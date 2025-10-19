@@ -14,6 +14,7 @@ public class PlayerMonsterCollision : MonoBehaviour
     public HeartUIManager heartUI;
     public GameObject heartsContainer;
     public GameObject gameOverCanvas;
+    public GameObject pauseCanvas;
     public TMP_Text scoreTextOnGameOver;
     private int currentScore = 0;
 
@@ -47,6 +48,7 @@ public class PlayerMonsterCollision : MonoBehaviour
             //AudioMangement.instance.PlayGameOver();
             if (!isInvincible)
             {
+                AudioMangement.instance.PlayMonsterCollision();
                 TakeDamage(collision.gameObject);
             }
             //GameOver();
@@ -146,6 +148,24 @@ public class PlayerMonsterCollision : MonoBehaviour
         }
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        if (pauseCanvas != null)
+        {
+            pauseCanvas.SetActive(true);
+        }
+    }
+
+    public void ContinueGame()
+    {
+        Time.timeScale = 1f;
+        if (pauseCanvas != null)
+        {
+            pauseCanvas.SetActive(false);
+        }
+    }
+
     public void PlayAgain()
     {
         // Khi b?m nút Play Again, game s? ch?y l?i bình th??ng
@@ -158,6 +178,8 @@ public class PlayerMonsterCollision : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting Game...");
-        Application.Quit();
+        //Application.Quit();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("StartScene");
     }
 }

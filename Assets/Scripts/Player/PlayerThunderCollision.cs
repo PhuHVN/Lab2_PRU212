@@ -45,6 +45,7 @@ public class PlayerThunderCollision : MonoBehaviour
             // H?y object Thunder ?? “?n” item
             //Destroy(other.gameObject);
             HandleItemCollection(other.gameObject);
+            AudioMangement.instance.PlayItemCollection();
 
             // N?u ?ang có buff thì reset l?i
             if (currentBuffCoroutine != null)

@@ -9,7 +9,20 @@ public class ItemCollectable : MonoBehaviour
             Debug.Log("Collected: " + name);
             AudioMangement.instance.PlayCoinCollect();
             ScoreManager.Instance.AddScore(1);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+
+            Collider2D collider = GetComponent<Collider2D>();
+            if(collider != null)
+            {
+                collider.enabled = false;
+            }
+
+            Renderer renderer = GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = false;
+            }
+            Destroy(gameObject, 0.1f);
         }
     }
 

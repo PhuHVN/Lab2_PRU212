@@ -41,6 +41,7 @@ public class PlayerHeartCollision : MonoBehaviour
             // 5. Dù có h?i máu hay không, item v?n ph?i bi?n m?t
             //Destroy(other.gameObject);
             HandleItemCollection(other.gameObject);
+            AudioMangement.instance.PlayItemCollection();
         }
     }
 
