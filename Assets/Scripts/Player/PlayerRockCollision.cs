@@ -15,6 +15,8 @@ public class PlayerRockCollision : MonoBehaviour
     private PlayerController playerController;
     private SpriteRenderer spriteRenderer;
 
+    private PlayerThunderCollision playerThunderCollision;
+
     // Bi?n ?? l?u tr? các giá tr? g?c
     private float originalMoveSpeed;
     private float originalJumpForce;
@@ -27,6 +29,7 @@ public class PlayerRockCollision : MonoBehaviour
     {
         playerController = GetComponent<PlayerController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerThunderCollision = GetComponent<PlayerThunderCollision>();
     }
 
     void Start()
@@ -61,6 +64,7 @@ public class PlayerRockCollision : MonoBehaviour
         // N?u có va ch?m v?i m?t trong các lo?i ?á
         if (durationToApply > 0f)
         {
+            playerThunderCollision?.CancelThunderBuff();
             // D?ng coroutine c? n?u ?ang ch?y
             if (currentDebuffCoroutine != null)
             {
