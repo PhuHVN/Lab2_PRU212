@@ -139,7 +139,7 @@ Mở: Assets/Scenes/→ Nhấn Play
 
 ### 🎬 Video demo
 
-👉 [Link video demo (bổ sung sau)](#)
+👉 Link video demo: https://www.youtube.com/watch?v=dXZ1m-RFj6c
 
 ---
 
