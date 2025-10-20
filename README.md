@@ -145,7 +145,7 @@ Mở: Assets/Scenes/→ Nhấn Play
 
 ## 🎥 10. Dường dẫn game deploy
 
-[(Link is comming soon)](#)
+🎮 Link web game: https://phu04.itch.io/snow-skiiing
 
 ---
 
